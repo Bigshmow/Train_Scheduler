@@ -1,0 +1,41 @@
+/* Elements */
+/* -------- */
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 20px;
+}
+/* Classes */
+/* -------- */
+.headLine {
+    background-color: #A0CED9;
+    color: #FCF5C7;
+}
+
+.thead {
+    background-color: #FFEE93;
+    color: #ffc09f;
+    padding: 10px;
+    border: 5px solid #ADF7B6;
+    width: 100%;
+}
+
+.table {
+    border: 5px solid #ADF7B6;
+}
+
+.card-border {
+    border: 5px solid #ADF7B6;
+}
+
+.addTrain {
+    margin-bottom: -5px;
+}
+/* IDs */
+/* -------- */

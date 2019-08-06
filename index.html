@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <Title>Train Scheduler</Title>
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="../Train_Scheduler/assets/reset.css">
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="../Train_Scheduler/assets/style.css">
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <!-- My JS -->
+  <script src="../Train_Scheduler/assets/app.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="jumbotron text-center headLine">
+          <h1>I choo choo choose you!</h1>
+          <h2>Let's find you a ride.</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <table class="table">
+          <thead class="thead">
+            <tr>
+              <th scope="col"><h2>Current Schedule</h2></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Train Name</th>
+              <th scope="row">Destination</th>
+              <th scope="row">Frequency (min)</th>
+              <th scope="row">Next Arrival</th>
+              <th scope="row">Minutes Away</th>
+            </tr>
+            <tr>
+              <td>Pain</td>
+              <td>Train Nation</td>
+              <td>As needed</td>
+              <td>Yesterday</td>
+              <td>42</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="jumbotron thead addTrain">
+          <h2>Add Train</h2>
+          </div>
+          <div class="card-body card-border">
+            <form role="form">
+              <div class="form-group row">
+                <label for="name-input">Train Name</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="email-input">Destination</label>
+                <input class="form-control" id="email-input" type="email">
+              </div>
+              <div class="form-group row">
+                <label for="age-input">First Train Time (HH:MM Military Time)</label>
+                <input class="form-control" id="age-input" type="number">
+              </div>
+              <div class="form-group row">
+                  <label for="age-input">Frequency</label>
+                  <input class="form-control" id="age-input" type="number">
+                </div>
+              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+            </form>
+
+          </div>
+        
+      </div>
+    </div>
+
+</body>
+
+</html>
