@@ -11,60 +11,59 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- My CSS -->
   <link rel="stylesheet" href="../Train_Scheduler/assets/style.css">
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-  <!-- My JS -->
-  <script src="../Train_Scheduler/assets/app.js"></script>
-</head>
-
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="jumbotron text-center headLine">
-          <h1>I choo choo choose you!</h1>
-          <h2>Let's find you a ride.</h2>
+    
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="jumbotron text-center headLine">
+            <h1>I choo choo choose you!</h1>
+            <h2>Let's find you a ride.</h2>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12">
-        <table class="table">
-          <thead class="thead">
-            <tr>
-              <th scope="col"><h2>Current Schedule</h2></th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" >Train Name</th>
-              <th scope="row" >Destination</th>
-              <th scope="row" >Frequency (min)</th>
-              <th scope="row" >Next Arrival</th>
-              <th scope="row" >Minutes Away</th>
-            </tr>
-            <tr id="trainTable">
-              <td>Ralph</td>
-              <td>Wiggum City</td>
-              <td>As needed</td>
-              <td>Yesterday</td>
-              <td>42</td>
-            </tr>
-          </tbody>
-        </table>
-
+      
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead class="thead">
+              <tr>
+                <th scope="col"><h2>Current Schedule</h2></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th ></th>
+              </tr>
+            </thead>
+            <tbody id="trainTable">
+              <tr>
+                <th scope="row" >Train Name</th>
+                <th scope="row" >Destination</th>
+                <th scope="row" >Frequency (min)</th>
+                <th scope="row" >Next Arrival</th>
+                <th scope="row" >Minutes Away</th>
+              </tr>
+              <tr>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="jumbotron thead addTrain">
-          <h2>Add Train</h2>
+      <div class="row">
+        <div class="col-12">
+          <div class="jumbotron thead addTrain">
+            <h2>Add Train</h2>
           </div>
           <div class="card-body card-border">
             <form role="form">
@@ -81,17 +80,19 @@
                 <input class="form-control" id="train-time" type="number">
               </div>
               <div class="form-group row">
-                  <label for="freq-input">Frequency</label>
-                  <input class="form-control" id="freq-input" type="number">
-                </div>
+                <label for="freq-input">Frequency</label>
+                <input class="form-control" id="train-freq" type="number">
+              </div>
               <button class="btn btn-success" id="add-train" type="submit">Submit</button>
             </form>
-
+            
           </div>
-        
+          
+        </div>
       </div>
-    </div>
+      <!-- My JS -->
+      <script src="../Train_Scheduler/assets/app.js"></script>
 
-</body>
-
+    </body>
+    
 </html>
