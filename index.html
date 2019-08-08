@@ -15,6 +15,8 @@
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+  <!-- Added Moment JS -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
@@ -48,8 +50,8 @@
               <tr>
                 <th scope="row" >Train Name</th>
                 <th scope="row" >Destination</th>
-                <th scope="row" >Frequency (min)</th>
                 <th scope="row" >Next Arrival</th>
+                <th scope="row" >Frequency (min)</th>
                 <th scope="row" >Minutes Away</th>
               </tr>
               <tr>
@@ -76,8 +78,8 @@
                 <input class="form-control" id="train-dest" type="text">
               </div>
               <div class="form-group row">
-                <label for="time-input">First Train Time (HH:MM Military Time)</label>
-                <input class="form-control" id="train-time" type="number">
+                <label for="time-input">First Train Time (HH:mm Military Time)</label>
+                <input class="form-control" id="train-time" type="text">
               </div>
               <div class="form-group row">
                 <label for="freq-input">Frequency</label>
