@@ -20,22 +20,21 @@ $(document).ready(function () {
     console.log(currentTime);
 
     var database = firebase.database();
-    var trainName = "Ralph Wiggum";
-    var trainDest = "Springfield";
-    var trainFreq = 42;
-    var firstTrain = "08:00";
-    var nextTrain = currentTime;
-    var tMinutesTillTrain = " ";
+    var trainName
+    var trainDest
+    var trainFreq
+    var firstTrain
 
 
-    database.ref().set({
-        trainName: trainName,
-        trainDest: trainDest,
-        firstTrain: firstTrain,
-        nextTrain: nextTrain,
-        trainFreq: trainFreq,
-        tMinutesTillTrain:tMinutesTillTrain,
-    })
+    // database.ref().set({
+    //     trainName: trainName,
+    //     trainDest: trainDest,
+    //     firstTrain: firstTrain,
+    //     nextTrain: nextTrain,
+    //     trainFreq: trainFreq,
+    //     tMinutesTillTrain:tMinutesTillTrain,
+    // })
+    
 
     $("#add-train").on("click", function () {
         event.preventDefault();
@@ -52,8 +51,8 @@ $(document).ready(function () {
 
         // Time apart (remainder)
         var tRemainder = diffTime % trainFreq;
+        
         console.log(tRemainder);
-
         // Minute Until Train
         var tMinutesTillTrain = trainFreq - tRemainder;
         console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
@@ -68,7 +67,7 @@ $(document).ready(function () {
             firstTrain: firstTrain,
             nextTrain: moment(nextTrain).format("HH:mm"),
             trainFreq: trainFreq,
-            tMinutesTillTrain:tMinutesTillTrain,
+            tMinutesTillTrain: tMinutesTillTrain,
         })
 
         $("#train-name").val("");
@@ -77,16 +76,23 @@ $(document).ready(function () {
         $("#train-freq").val("");
     });
 
-    database.ref().on("value", function (snapshot) {
+    database.ref().on("child_added", function(childSnapshot) {
 
-        $("#trainTable").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" + nextTrain + "</td><td>" + trainFreq + "</td><td>" + tMinutesTillTrain + "</td>");
+        console.log(childSnapshot.val().trainName);
+        console.log(childSnapshot.val().trainDest);
+        console.log(childSnapshot.val().firstTrain);
+        console.log(childSnapshot.val().nextTrain);
+        console.log(childSnapshot.val().trainFreq);
+        console.log(childSnapshot.val().tMinutesTillTrain);
+
+        $("#trainTable").append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().trainDest + "</td><td>" + childSnapshot.val().nextTrain + "</td><td>" + childSnapshot.val().trainFreq + "</td><td>" + childSnapshot.val().tMinutesTillTrain + "</td>");
 
 
 
-        $("#name-display").text(snapshot.val().trainName);
-        $("#email-display").text(snapshot.val().trainDest);
-        $("#age-display").text(snapshot.val().firstTrain);
-        $("#comment-display").text(snapshot.val().nextTrain);
+        // $("#name-display").text(snapshot.val().trainName);
+        // $("#email-display").text(snapshot.val().trainDest);
+        // $("#age-display").text(snapshot.val().firstTrain);
+        // $("#comment-display").text(snapshot.val().nextTrain);
 
         // Handle the errors
     }, function (errorObject) {
