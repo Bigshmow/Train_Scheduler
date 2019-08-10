@@ -85,6 +85,11 @@ $(document).ready(function () {
         console.log(childSnapshot.val().trainFreq);
         console.log(childSnapshot.val().tMinutesTillTrain);
 
+        // var nextMins = moment().diff(moment(childSnapshot.val().nextTrain), "minutes");
+        
+        // var next = Math.abs(parseInt(childSnapshot.val().nextTrain) - parseInt(moment().format("HH:mm")));
+        // console.log(next);
+
         $("#trainTable").append("<tr><td>" + childSnapshot.val().trainName + "</td><td>" + childSnapshot.val().trainDest + "</td><td>" + childSnapshot.val().nextTrain + "</td><td>" + childSnapshot.val().trainFreq + "</td><td>" + childSnapshot.val().tMinutesTillTrain + "</td>");
 
 
